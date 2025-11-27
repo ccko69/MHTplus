@@ -1,5 +1,16 @@
-<menu xmlns:android="http://schemas.android.com/apk/res/android">
+<menu xmlns:android="http://schemas.android.com/apk/res/android" xmlns:app="http://schemas.android.com/apk/res-auto">
 
-    <item android:id="@+id/action_library" android:icon="@android:drawable/ic_menu_agenda" android:showAsAction="always" android:title="Library"/>
+    <item android:id="@+id/nav_library" android:title="@string/menu_library"/>
+    <item android:id="@+id/nav_open" android:title="@string/menu_open"/>
+    <item android:id="@+id/nav_save" android:title="@string/menu_save"/>
+    <item android:id="@+id/nav_divider" android:enabled="false" android:title=""/>
+    <!-- In res/menu/menu_browser.xml -->
+    <item android:id="@+id/nav_translate_image" android:icon="@android:drawable/ic_menu_edit" android:title="Translate Image (OCR Mode)"/>
+    <!-- Find a better icon later -->
+
+    <item android:id="@+id/nav_autoscroll" android:checkable="false" android:title="@string/menu_autoscroll" app:actionLayout="@layout/nav_autoscroll"/>
+    <item android:id="@+id/nav_orientation" android:icon="@android:drawable/ic_menu_rotate" android:title="@string/menu_orientation"/>
+    <item android:id="@+id/nav_fullscreen" android:checkable="true" android:checked="false" android:icon="@android:drawable/ic_menu_view" android:title="@string/menu_fullscreen"/>
+    <item android:id="@+id/nav_more" android:title="@string/menu_more"/>
 
 </menu>
