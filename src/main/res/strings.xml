@@ -1,0 +1,22 @@
+<resources>
+
+    <string name="app_name">MHT+</string>
+
+    <!-- Place this content within your <resources> tag -->
+    <string name="ccko_failed_save_local_file">Saving local files (file://) is not supported.</string>
+    <string name="ccko_failed_save_no_url">Cannot save page: The WebView is not currently loaded to a URL.</string>
+
+    <!-- (Add any other strings you already had, like menu_library, menu_open, etc.) -->
+    <string name="menu_library">Library</string>
+    <string name="menu_open">Open</string>
+    <string name="menu_save">Save</string>
+    <string name="menu_orientation">Orientation</string>
+    <string name="menu_fullscreen">Full screen</string>
+    <string name="menu_more">More</string>
+    <string name="pref_orientation_key">pref_orientation</string>
+    <string name="pref_fullscreen_key">pref_fullscreen</string>
+    <string name="orientation_portrait">Portrait</string>
+    <string name="orientation_landscape">Landscape</string>
+    <string name="menu_autoscroll">Auto scroll</string>
+
+</resources>
