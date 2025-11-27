@@ -6,8 +6,15 @@
 
     <application
         android:allowBackup="true"
+        android:icon="@drawable/ic_eye"
         android:label="MHT+"
-        android:theme="@style/Theme.AppCompat.Light.NoActionBar" >
+        android:theme="@style/Theme.AppCompat.NoActionBar" > <!-- FIXED: Changed theme to safer base, added closing '>' -->
+
+
+        <!-- REQUIRED FOR ML KIT: Tells Google Play Services to download the OCR model -->
+        <meta-data
+            android:name="com.google.mlkit.vision.DEPENDENCIES"
+            android:value="ocr" />
 
         <!-- FileProvider for secure file sharing and handling incoming file URIs -->
         <provider
@@ -23,7 +30,8 @@
         <!-- Main browser activity (launcher). Also accepts VIEW intents for .mht files and common MHTML MIME types -->
         <activity
             android:name=".BrowserActivity"
-            android:exported="true" >
+            android:configChanges="orientation|screenSize"
+            android:exported="true" > <!-- ADDED: configChanges for orientation handling -->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -35,6 +43,31 @@
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:scheme="file" />
+                <data android:host="*" />
+                <data android:pathPattern=".*\\.mht" />
+            </intent-filter>
+
+            <!-- Accept common MHTML MIME types -->
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+
+                <data android:mimeType="multipart/related" />
+                <data android:mimeType="message/rfc822" />
+                <data android:mimeType="application/octet-stream" />
+            </intent-filter>
+        </activity>
+
+        <!-- Library activity: lists saved MHT archives -->
+        <activity
+            android:name=".LibraryActivity"
+            android:exported="true" />
+    </application>
+
+</manifest>                <category android:name="android.intent.category.DEFAULT" />
 
                 <data android:scheme="file" />
                 <data android:host="*" />
