@@ -1,0 +1,58 @@
+[
+  {
+    "artifactId": "material",
+    "excludes": [],
+    "groupId": "com.google.android.material",
+    "scope": "compile",
+    "versionName": "1.6.1"
+  },
+  {
+    "artifactId": "appcompat",
+    "excludes": [],
+    "groupId": "androidx.appcompat",
+    "scope": "compile",
+    "versionName": "1.4.2"
+  },
+  {
+    "artifactId": "core",
+    "excludes": [],
+    "groupId": "androidx.core",
+    "scope": "compile",
+    "versionName": "1.7.0"
+  },
+  {
+    "artifactId": "coordinatorlayout",
+    "excludes": [],
+    "groupId": "androidx.coordinatorlayout",
+    "scope": "compile",
+    "versionName": "1.2.0"
+  },
+  {
+    "artifactId": "recyclerview",
+    "excludes": [],
+    "groupId": "androidx.recyclerview",
+    "scope": "compile",
+    "versionName": "1.1.0"
+  },
+  {
+    "artifactId": "text-recognition",
+    "excludes": [],
+    "groupId": "com.google.mlkit",
+    "scope": "compile",
+    "versionName": "16.0.0"
+  },
+  {
+    "artifactId": "language-id",
+    "excludes": [],
+    "groupId": "com.google.mlkit",
+    "scope": "compile",
+    "versionName": "16.1.1"
+  },
+  {
+    "artifactId": "translate",
+    "excludes": [],
+    "groupId": "com.google.mlkit",
+    "scope": "compile",
+    "versionName": "17.0.1"
+  }
+]
