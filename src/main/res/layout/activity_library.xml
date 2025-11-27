@@ -4,34 +4,92 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent" >
 
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/library_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:title="Library" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/library_recycler"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:padding="8dp"
+        android:clipToPadding="false" />
+
+    <!-- Top app bar -->
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/library_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
         android:background="?attr/colorPrimary"
         android:title="Library"
         app:titleTextColor="@android:color/white" />
 
-    <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-        android:id="@+id/swipe_refresh"
+    <!-- Content column below the toolbar -->
+
+    <LinearLayout
+        android:id="@+id/content_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@id/library_toolbar"
-        android:layout_marginTop="?attr/actionBarSize" >
+        android:layout_marginTop="?attr/actionBarSize"
+        android:orientation="vertical" >
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_library"
+        <!-- Search bar + Go button -->
+
+        <LinearLayout
+            android:id="@+id/search_bar_container"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:padding="8dp" />
-    </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp" >
 
-    <TextView
-        android:id="@+id/tv_empty"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:text="No saved pages"
-        android:visibility="gone" />
+            <EditText
+                android:id="@+id/et_search"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:hint="Search saved pages"
+                android:inputType="text"
+                android:padding="12dp" />
+
+            <Button
+                android:id="@+id/btn_search_go"
+                android:layout_width="wrap_content"
+                android:layout_height="48dp"
+                android:text="Go" />
+        </LinearLayout>
+
+        <!-- Refreshable list -->
+
+        <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:id="@+id/swipe_refresh"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" >
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_library"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:padding="8dp" />
+        </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        <!-- Empty state message (overlay-style; optional visibility controlled in code) -->
+
+        <TextView
+            android:id="@+id/tv_empty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:padding="16dp"
+            android:text="No saved pages"
+            android:visibility="gone" />
+    </LinearLayout>
 
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
